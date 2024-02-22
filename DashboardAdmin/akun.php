@@ -28,7 +28,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Zidan_Perpus </title>
+  <title>Fapus</title>
   <link rel="icon" href="../assets/bookstore.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])) {
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css'>
   <link rel="stylesheet" href="../assets/style3.css">
-  <link rel="icon" type="png" href="../images/perpus.png">
+  <link rel="icon" type="jpeg" href="../images/a.jpeg">
 
 </head>
 
@@ -59,7 +59,7 @@ if (!isset($_SESSION['username'])) {
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="akun.php">
-          <div class="sidebar-brand-text fas fa-book"> perpus</div>
+          <div class="sidebar-brand-text fas fa-book"> Fapus</div>
         </a>
 
         <!-- Divider -->

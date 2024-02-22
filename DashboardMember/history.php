@@ -41,7 +41,7 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Zidan_Perpus</title>
+    <title>Fapus</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -59,7 +59,7 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
     <link rel="stylesheet" href="css2/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="website icon" type="png" href="../images/perpus.png">
+    <link rel="website icon" type="png" href="../images/a.jpeg">
 </head>
 
 <body id="page-top">
@@ -77,15 +77,12 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
                 <div class="header_section">
                     <div class="container-fluid">
                         <n class="navbar navbar-expand-lg navbar-light bg-light">
-                            <a class="navbar-brand" href="#page"><img src="../images/perpus.png"></a>
+                            <a class="navbar-brand" href="#page"><img src="../images/logof.png"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="../DashboardMember/profile/profile.php">Profile</a>
-                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard.php">Daftar Buku</a>
                                     </li>

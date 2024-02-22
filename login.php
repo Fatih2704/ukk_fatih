@@ -33,7 +33,7 @@ $connect->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Siswa</title>
     <link rel="stylesheet" href="js_css/style.css">
-    <link rel="website icon" type="png" href="images/perpus.png">
+    <link rel="website icon" type="jpeg" href="images/a.jpeg">
 </head>
 
 <body>
