@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Feb 2024 pada 07.15
+-- Waktu pembuatan: 23 Feb 2024 pada 16.05
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fapus`
+-- Database: `ukk_fatih`
 --
 
 -- --------------------------------------------------------
@@ -64,7 +64,11 @@ CREATE TABLE `kategori_buku` (
 INSERT INTO `kategori_buku` (`kategori`) VALUES
 ('Dongeng'),
 ('Filsafat'),
+('Kamus'),
 ('Komik'),
+('Light Novel (Novel Ringan)'),
+('Majalah'),
+('Manga'),
 ('Novel');
 
 -- --------------------------------------------------------
@@ -116,7 +120,9 @@ INSERT INTO `peminjaman` (`id`, `id_buku`, `nisn`, `id_user`, `tgl_pinjam`, `tgl
 (7, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
 (8, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
 (9, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
-(10, 'KB0001', 123, 36, '2024-02-23', '2024-02-19', 3);
+(10, 'KB0001', 123, 36, '2024-02-23', '2024-02-19', 3),
+(11, 'KB0001', 123, 36, '2024-02-23', '2024-02-27', 2),
+(12, 'KB0001', 123, 36, '2024-02-23', '2024-02-22', 3);
 
 -- --------------------------------------------------------
 
@@ -192,7 +198,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
