@@ -83,7 +83,7 @@ if (isset($_POST["pinjam"])) {
               <a class="nav-link" href="daftar_pinjam.php">Peminjaman</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#.php">History</a>
+              <a class="nav-link" href="history.php">History</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="dashboard.php">Kembali</a>

@@ -26,8 +26,8 @@ if (!isset($_SESSION['username'])) {
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content=""> 
-  <meta name="author" content=""> 
+  <meta name="description" content="">
+  <meta name="author" content="">
   <title>Fapus</title>
   <link rel="icon" href="../images/perpus.png" type="png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -41,7 +41,7 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Custom styles for this page -->
   <link href="../assets2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link rel="icon" type="png" href="../images/p.png">
+  <link rel="icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">
@@ -84,7 +84,7 @@ if (!isset($_SESSION['username'])) {
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fa-solid fa-user-plus"></i>
+            <i class="fa-solid fa-user-plus"></i>
             <span>Pengguna</span>
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -188,7 +188,6 @@ if (!isset($_SESSION['username'])) {
                       <th>No</th>
                       <th>Kategori</th>
                       <th>Aksi</th>
-
                     </tr>
                   </thead>
                   <tbody>
@@ -210,16 +209,21 @@ if (!isset($_SESSION['username'])) {
                     if (isset($_POST['kate'])) {
                       $kategori = $_POST['kategori'];
 
-                      $query = "INSERT INTO kategori_buku (kategori) VALUES ('$kategori')";
-                      $result = mysqli_query($connection, $query);
-                      // periska query apakah ada error
-                      if (!$result) {
-                        die("Query gagal dijalankan: " . mysqli_errno($connection) .
-                          " - " . mysqli_error($connection));
+                      // Query untuk memeriksa apakah kategori sudah ada dalam database
+                      $check_query = "SELECT * FROM kategori_buku WHERE kategori = '$kategori'";
+                      $check_result = mysqli_query($connection, $check_query);
+                      if (mysqli_num_rows($check_result) > 0) {
+                        // Kategori sudah ada, beri tahu pengguna
+                        echo "<script>alert('Kategori Sudah Ada, Silakan Cari Lagi');window.location='kategori.php';</script>";
                       } else {
-                        //tampil alert dan akan redirect ke halaman index.php
-                        //silahkan ganti index.php sesuai halaman yang akan dituju
-                        echo "<script>alert('Data berhasil ditambah.');window.location='kategori.php';</script>";
+                        // Kategori belum ada, tambahkan ke database
+                        $insert_query = "INSERT INTO kategori_buku (kategori) VALUES ('$kategori')";
+                        $insert_result = mysqli_query($connection, $insert_query);
+                        if (!$insert_result) {
+                          die("Query gagal dijalankan: " . mysqli_errno($connection) . " - " . mysqli_error($connection));
+                        } else {
+                          echo "<script>alert('Data berhasil ditambah.');window.location='kategori.php';</script>";
+                        }
                       }
                     }
                     ?>

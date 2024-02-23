@@ -5,6 +5,6 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-header("Location: ../index.php");
+echo '<script>alert("Anda Telat Logout!");window.location="../index.php"</script>';
   exit;
 ?>

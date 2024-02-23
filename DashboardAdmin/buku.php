@@ -248,7 +248,7 @@ if (isset($_POST["edit"])) {
 
                                                                     <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">ID Buku</label>
-                                                                        <input type="text" class="form-control" name="id_buku" id="id_buku" value="<?= $item['id_buku']; ?>">
+                                                                        <input type="text" class="form-control" name="id_buku" id="id_buku" value="<?= $item['id_buku']; ?>" readonly>
                                                                     </div>
                                                                 </div>
 

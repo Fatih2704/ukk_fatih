@@ -16,15 +16,15 @@ if (isset($_POST['nisn']) && isset($_POST['nama'])) {
         $_SESSION['nama'] = $nama;
         $_SESSION['nisn'] = $nisn;
         $_SESSION['password'] = $password;
-        header("Location: DashboardMember/dashboard.php"); // Redirect to dashboard or any other page
+        echo '<script>alert("Login Sukses!");window.location="DashboardMember/dashboard.php"</script>';
     } else {
         // Login failed
         echo "<script>alert('NISN atau Nama Anda Salah. Silahkan coba lagi!')</script>";
     }
 }
 $connect->close();
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
