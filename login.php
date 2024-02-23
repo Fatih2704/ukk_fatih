@@ -19,7 +19,7 @@ if (isset($_POST['nisn']) && isset($_POST['nama'])) {
         header("Location: DashboardMember/dashboard.php"); // Redirect to dashboard or any other page
     } else {
         // Login failed
-        echo "<script>alert('nis atau nama Anda salah. Silahkan coba lagi!')</script>";
+        echo "<script>alert('NISN atau Nama Anda Salah. Silahkan coba lagi!')</script>";
     }
 }
 $connect->close();
@@ -33,7 +33,7 @@ $connect->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Siswa</title>
     <link rel="stylesheet" href="js_css/style.css">
-    <link rel="website icon" type="jpeg" href="images/a.jpeg">
+    <link rel="website icon" type="png" href="images/p.png">
 </head>
 
 <body>
@@ -47,14 +47,15 @@ $connect->close();
                     <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
                     <h1 class="opacity">LOGIN</h1>
                     <form action="" method="POST">
-                        <input type="text" name="nama" placeholder="USERNAME" />
-                        <input type="text" name="nisn" placeholder="NISN" />
-                        <input type="password" name="password" placeholder="PASSWORD" />
-                        <button type="submit" name="signIn" class="opacity">Login</button>
-                        <button onclick="window.location.href='index.php'" type="button">Kembali</button>
+                        <input type="text" name="nama" placeholder="MASUKAN USERNAME" />
+                        <input type="text" name="nisn" placeholder="MASUKAN NISN" />
+                        <input type="password" name="password" placeholder="MASUKAN PASSWORD" />
+                        <button type="submit" name="signIn" class="opacity">MASUK</button>
+                        <button onclick="window.location.href='index.php'" type="button">KEMBALI</button>
                     </form>
                     <div class="opacity" style="text-align: center;">
                         <p class="copyright_text">BELUM PUNYA AKUN ? <a href="register.php">REGISTER</a></p>
+                        <p class="copyright_text">ANDA ADMIN ? <a href="admin.php">MASUK</a></p>
                     </div>
                 </div>
                 <div class="circle circle-two"></div>

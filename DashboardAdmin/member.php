@@ -29,7 +29,6 @@ if (!isset($_SESSION['username'])) {
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Fapus</title>
-  <link rel="icon" href="../images/perpus.png" type="png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
   <!-- Custom fonts for this template -->
@@ -41,7 +40,7 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Custom styles for this page -->
   <link href="../assets2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link rel="icon" type="jpeg" href="../images/a.jpeg">
+<link rel="icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">
@@ -153,7 +152,7 @@ if (!isset($_SESSION['username'])) {
                 <a class="dropdown-item text-center mb-2" href="#"><span class="text-capitalize"><?php echo $_SESSION['sebagai']; ?></span></a>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item text-center p-2 bg-success text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+                <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
               </div>
             </li>
 

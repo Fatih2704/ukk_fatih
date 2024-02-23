@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css2/jquery.mCustomScrollbar.min.css">
   <!-- Tweaks for older IEs-->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <link rel="website icon" type="jpeg" href="images/a.jpeg">
+  <link rel="website icon" type="png" href="images/p.png">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="banner_taital_main">
-                      <h1 class="banner_taital">Selamat Datang di perpus</h1>
+                      <h1 class="banner_taital">Selamat Datang di Fapus</h1>
                       <div class="btn_main">
                         <div class="started_text"><a href="login.php">Login</a></div>
                         <div class="started_text active"><a href="register.php">Register</a></div>

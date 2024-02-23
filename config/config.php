@@ -118,31 +118,14 @@ function upload()
     return 0;
   }
 
- 
   //generate nama file baru, agar nama file tdk ada yg sama
   $namaFileBaru = uniqid();
   $namaFileBaru .= ".";
   $namaFileBaru .= $ekstensiGambar;
 
-  move_uploaded_file($tmpName, '../imgDB/' . $namaFileBaru);
+  move_uploaded_file($tmpName, '../../imgDB/' . $namaFileBaru);
   return $namaFileBaru;
 }
-
-function deleteKategori($kategori)
-{
-  global $connection;
-
-  $queryDeleteBuku = "DELETE FROM buku WHERE kategori = '$kategori'
-";
-  mysqli_query($connection, $queryDeleteBuku);
-
-  $queryDeleteKategori = "DELETE FROM kategori_buku WHERE kategori = '$kategori'
-";
-  mysqli_query($connection, $queryDeleteKategori);
-
-  return mysqli_affected_rows($connection);
-}
-
 
 //upload isi buku dengan format pdf
 function upload_isi()
@@ -154,7 +137,7 @@ function upload_isi()
   $file_tmp = $_FILES['isi_buku']['tmp_name'];
 
   // Lokasi Penempatan file
-  $dirUpload = "../isi-buku/";
+  $dirUpload = "../../isi-buku/";
   $linkBerkas = $dirUpload . $namaFile;
 
   // Validasi Format File (contoh: hanya menerima format PDF)
@@ -182,6 +165,22 @@ function upload_isi()
       </script>";
     return 0;
   }
+}
+
+// DELETE DATA Kategori
+function deleteKategori($kategori)
+{
+  global $connection;
+
+  $queryDeleteBuku = "DELETE FROM buku WHERE kategori = '$kategori'
+  ";
+  mysqli_query($connection, $queryDeleteBuku);
+
+  $queryDeleteKategori = "DELETE FROM kategori_buku WHERE kategori = '$kategori'
+  ";
+  mysqli_query($connection, $queryDeleteKategori);
+
+  return mysqli_affected_rows($connection);
 }
 
 function tambahadmin()
@@ -338,3 +337,26 @@ function pinjamBuku($dataBuku)
 }
 
 // === FUNCTION KHUSUS MEMBER END ===
+
+
+// Logika untuk mengubah status menjadi "Waktu habis" saat tanggal pengembalian telah lewat
+function pengembalian()
+{
+  global $connection;
+
+  // Ambil waktu saat ini
+  $waktuSekarang = date("Y-m-d");
+
+  // Query untuk mendapatkan peminjaman yang waktu pengembaliannya sudah berakhir
+  $queryPeminjamanBerakhir = "SELECT * FROM peminjaman WHERE tgl_kembali < '$waktuSekarang'";
+  $resultPeminjamanBerakhir = mysqli_query($connection, $queryPeminjamanBerakhir);
+
+  // Jika ada peminjaman yang sudah berakhir, simpan ke dalam tabel pengembalian dan hapus dari tabel peminjaman
+  while ($row = mysqli_fetch_assoc($resultPeminjamanBerakhir)) {
+    $idPeminjaman = $row['id'];
+
+    // Update status peminjaman menjadi "Waktu habis"
+    $queryUpdateStatus = "UPDATE peminjaman SET status = '3' WHERE id = '$idPeminjaman'";
+    mysqli_query($connection, $queryUpdateStatus);
+  }
+}

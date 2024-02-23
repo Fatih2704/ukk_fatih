@@ -23,7 +23,7 @@ if (isset($_POST["signUp"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Siswa</title>
     <link rel="stylesheet" href="js_css/style.css">
-    <link rel="website icon" type="jpeg" href="images/a.jpeg">
+    <link rel="website icon" type="png" href="images/p.png">
 </head>
 
 <body>
@@ -46,7 +46,7 @@ if (isset($_POST["signUp"])) {
                             <input type="text" name="alamat" placeholder="Masukan Alamat" />
                         </div>
                     </div>
-                    <button class="opacity" name="signUp">SUBMIT</button>
+                    <button class="opacity" name="signUp">SIGN UP</button>
                 </form>
                 <div class="opacity">
                     <p style="text-align:center;" class="copyright_text">SUDAH BUAT AKUN ? <a href="login.php"> MASUK</a></p>

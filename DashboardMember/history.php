@@ -59,7 +59,7 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
     <link rel="stylesheet" href="css2/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="website icon" type="png" href="../images/a.jpeg">
+    <link rel="website icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">

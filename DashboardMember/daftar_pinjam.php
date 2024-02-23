@@ -19,17 +19,15 @@ $nisn = $_SESSION['nisn'];
 // Now you can use $nis wherever you need it
 
 require "../config/config.php";
-
+pengembalian();
 // Assuming $id is the specific value you want to match
-
 $statusArray = [0, 1, 2];
 $statusString = implode(',', $statusArray);
-
 $peminjaman = queryReadData("SELECT * FROM peminjaman
 INNER JOIN buku ON peminjaman.id_buku = buku.id_buku
 INNER JOIN member ON peminjaman.nisn = member.nisn
 INNER JOIN user ON peminjaman.id_user = user.id
-WHERE peminjaman.nisn = '$nisn' and status in ($statusString)");
+WHERE peminjaman.nisn = '$nisn' and status IN ($statusString)");
 
 // Replace $id with the actual condition you want to use in the WHERE clause
 ?>
@@ -62,7 +60,7 @@ WHERE peminjaman.nisn = '$nisn' and status in ($statusString)");
   <link rel="stylesheet" href="css2/jquery.mCustomScrollbar.min.css">
   <!-- Tweaks for older IEs-->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <link rel="website icon" type="jpeg" href="../images/a.jpeg">
+  <link rel="website icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">
@@ -80,7 +78,7 @@ WHERE peminjaman.nisn = '$nisn' and status in ($statusString)");
         <div class="header_section">
           <div class="container-fluid">
             <n class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#page"><img src="../images/logof.png"></a>
+              <a class="navbar-brand" href="#page"><img src="../images/logof.png"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -154,7 +152,7 @@ WHERE peminjaman.nisn = '$nisn' and status in ($statusString)");
                           <td>
                             <?php
                             if ($item['status'] == '0') {
-                              echo '<div><b>Dalam Proses... (Pending)</b></div>';
+                              echo '<div><b>Menunggu Persetujuan...</b></div>';
                             } elseif ($item['status'] == '1') {
                             ?>
                               <a href="bacabuku.php?id_buku=<?= $item['id_buku']; ?>" class="btn btn-success">Baca</a>

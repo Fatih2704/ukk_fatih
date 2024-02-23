@@ -66,7 +66,7 @@ $connect->close();
   <title>Fapus</title>
   <link rel="stylesheet" href="js_css/style2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="icon" type="jpeg" href="images/a.jpeg">
+  <link rel="icon" type="png" href="images/p.png">
 </head>
 
 <body>
@@ -76,17 +76,17 @@ $connect->close();
     </div>
     <form action="" method="POST">
       <div class="field">
-        <input type="text" name="username" placeholder="Your Name" />
+        <input type="text" name="username" placeholder="Masukan Nama" />
         <span class="fas fa-user"></span>
         <label>Name</label>
       </div>
       <div class="field">
-        <input type="password" name="password" placeholder="Your Password" />
+        <input type="password" name="password" placeholder="Masukan Password" />
         <span class="fas fa-lock"></span>
         <label>Password</label>
       </div>
-      <button class="btn btn-primary" type="submit" name="btn-login">Sign In</button>
-      <button onclick="window.location.href='index.php'" class="btn btn-primary" type="button">Go Back</button>
+      <button class="btn btn-primary" type="submit" name="btn-login">Masuk</button>
+      <button onclick="window.location.href='index.php'" class="btn btn-primary" type="button">Kembali Ke Hlmn Utama</button>
     </form>
   </div>
 

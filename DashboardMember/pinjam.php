@@ -61,8 +61,8 @@ if (isset($_POST["pinjam"])) {
   <link rel="stylesheet" href="css2/jquery.mCustomScrollbar.min.css">
   <!-- Tweaks for older IEs-->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <link rel="website icon" type="png" href="../images/perpus.png">
-  <title>Zidan_Perpus</title>
+  <link rel="website icon" type="png" href="../images/p.png">
+  <title>Fapus</title>
 </head>
 
 <body>
@@ -70,7 +70,7 @@ if (isset($_POST["pinjam"])) {
   <div class="header_section">
     <div class="container-fluid">
       <n class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#page"><img src="../images/perpus.png"></a>
+        <a class="navbar-brand" href="#page"><img src="../images/logof.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -112,7 +112,7 @@ if (isset($_POST["pinjam"])) {
               <div class="row">
                 <div class="col-md-6 col-12">
                   <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Id Buku</span>
+                    <span class="input-group-text" id="basic-addon1">ID Buku</span>
                     <input type="text" class="form-control" placeholder="id buku" aria-label="Username" aria-describedby="basic-addon1" value="<?= $item["id_buku"]; ?>" readonly>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ if (isset($_POST["pinjam"])) {
                 <div class="row">
                   <div class="col-md-6 col-12">
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon1">Nisn</span>
+                      <span class="input-group-text" id="basic-addon1">NISN</span>
                       <input type="number" class="form-control" placeholder="nisn" aria-label="nisn" aria-describedby="basic-addon1" value="<?= $item["nisn"]; ?>" readonly>
                     </div>
                   </div>
@@ -221,18 +221,18 @@ if (isset($_POST["pinjam"])) {
               <!--Ambil data id buku-->
               <?php foreach ($query as $item) : ?>
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Id Buku</span>
+                  <span class="input-group-text" id="basic-addon1">ID Buku</span>
                   <input type="text" name="id_buku" class="form-control" placeholder="id buku" aria-label="id_buku" aria-describedby="basic-addon1" value="<?= $item["id_buku"]; ?>" readonly>
                 </div>
               <?php endforeach; ?>
               <!-- Ambil data NISN user yang login-->
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nisn</span>
+                <span class="input-group-text" id="basic-addon1">NISN</span>
                 <input type="number" name="nisn" class="form-control" placeholder="nisn" aria-label="nisn" aria-describedby="basic-addon1" value="<?php echo htmlentities($_SESSION["nisn"]); ?>" readonly>
               </div>
               <!--Ambil data id admin-->
-              <select name="id_user" class="form-select" aria-label="Default select example">
-                <option selected>Pilih id Petugas</option>
+              <select name="id_user" class="form-select" aria-label="Default select example" required>
+                <option value="" selected>Pilih ID Petugas</option>
                 <?php foreach ($admin as $item) : ?>
                   <option value="<?= $item["id"]; ?>"><?= $item["username"]; ?></option>
                 <?php endforeach;

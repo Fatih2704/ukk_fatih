@@ -58,7 +58,6 @@ if (isset($_POST["edit"])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Fapus</title>
-    <link rel="icon" href="../images/perpus.png" type="png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/de8de52639.js" crossorigin="anonymous"></script>
     <!-- Custom fonts for this template -->
@@ -70,7 +69,7 @@ if (isset($_POST["edit"])) {
 
     <!-- Custom styles for this page -->
     <link href="../assets2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link rel="icon" type="jpeg" href="../images/a.jpeg">
+    <link rel="icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">
@@ -179,7 +178,7 @@ if (isset($_POST["edit"])) {
                                 <a class="dropdown-item text-center text-secondary" href="#"> <span class="text-capitalize"><?php echo $_SESSION['nama']; ?></span></a>
                                 <a class="dropdown-item text-center mb-2" href="#"><span class="text-capitalize"><?php echo $_SESSION['sebagai']; ?></span></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="../signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+                                <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
                             </div>
                         </li>
                     </ul>
@@ -201,6 +200,7 @@ if (isset($_POST["edit"])) {
                                             <th>ID Buku</th>
                                             <th>Judul</th>
                                             <th>Pengarang</th>
+                                            <th>Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -212,10 +212,11 @@ if (isset($_POST["edit"])) {
                                         ?>
                                             <tr>
                                                 <td align="center"><?php echo $no++ ?></td>
-                                                <td><img src="../../imgDB/<?= $item["cover"]; ?>" class="card-img-top" alt="coverBuku" style="width: 75px; height: 88px; aspect-ratio: 6/10;"></td>
+                                                <td><img src="../imgDB/<?= $item["cover"]; ?>" class="card-img-top" alt="coverBuku" style="width: 75px; height: 88px; aspect-ratio: 6/10;"></td>
                                                 <td><?php echo $item['id_buku'] ?></td>
                                                 <td><?php echo $item['judul'] ?></td>
                                                 <td><?php echo $item['pengarang'] ?></td>
+                                                <td><?php echo $item['kategori'] ?></td>
                                                 <td align="center">
                                                     <a title="detail" class="btn btn-success" href="detail_buku.php?id=<?= $item['id_buku']; ?>"><i class="fas fa-eye"></i></a>
                                                     <a title="edit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModalEdit<?= $id_buku; ?>"><i class="fas fa-edit"></i></a>
@@ -240,7 +241,7 @@ if (isset($_POST["edit"])) {
                                                                 <div class="custom-css-form">
                                                                     <div class="mb-3">
                                                                         <input type="hidden" name="coverLama" value="<?= $item["cover"]; ?>">
-                                                                        <img src="../../imgDB/<?= $item["cover"]; ?>" width="80px" height="80px">
+                                                                        <img src="../imgDB/<?= $item["cover"]; ?>" width="80px" height="80px">
                                                                         <label for="formFileMultiple" class="form-label">Cover Buku</label>
                                                                         <input class="form-control" type="file" name="cover" id="formFileMultiple">
                                                                     </div>
