@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Feb 2024 pada 13.47
+-- Waktu pembuatan: 23 Feb 2024 pada 06.57
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -40,6 +40,13 @@ CREATE TABLE `buku` (
   `isi_buku` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `buku`
+--
+
+INSERT INTO `buku` (`cover`, `id_buku`, `kategori`, `judul`, `pengarang`, `penerbit`, `thn_terbit`, `jml_halaman`, `deskripsi`, `isi_buku`) VALUES
+('65d741ce4fcc1.jpg', 'KB0001', 'Novel', 'Sejarah Dunia Yang di Sembunyikan', 'Jonathan Black', 'Gramedia Pustaka Utama', '2015-05-14', 636, 'Buku Sejarah Dunia Yang Disembunyikan yang ditulis oleh Jonathan Black merupakan buku yang mengungkapkan tentang keraguan dan kepercayaan kita akan sejarah mitologi Yunani dan Mesir Kuno serta cerita rakyat Yahudi yang tidak dapat kita lihat langsung kebenarannya. Buku ini ditulis dengan tujuan memberitahu pembaca tentang fakta dasar sejarah yang berbeda dari yang kita tahu. Pembaca akan mendapatkan pengetahuan baru dan lebih tercerahkan akan wawasan sejarah dunia.', 'Sejarah Dunia yang Disembunyikan (Jonathan Black).pdf');
+
 -- --------------------------------------------------------
 
 --
@@ -55,11 +62,10 @@ CREATE TABLE `kategori_buku` (
 --
 
 INSERT INTO `kategori_buku` (`kategori`) VALUES
-('bisnis'),
-('filsafat'),
-('informatika'),
-('novel'),
-('sains');
+('Dongeng'),
+('Filsafat'),
+('Komik'),
+('Novel');
 
 -- --------------------------------------------------------
 
@@ -99,6 +105,19 @@ CREATE TABLE `peminjaman` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id`, `id_buku`, `nisn`, `id_user`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
+(4, 'KB0001', 123, 36, '2024-02-20', '2024-02-18', 3),
+(5, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
+(6, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
+(7, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
+(8, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
+(9, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', 3),
+(10, 'KB0001', 123, 36, '2024-02-23', '2024-02-19', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -118,7 +137,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `sebagai`) VALUES
-(36, 'tih', '123', 'MFH_2', 'admin'),
+(36, 'tih', '123', 'MFH_2', 'petugas'),
 (42, 'fatih', '123', 'MFH', 'admin');
 
 --
@@ -173,7 +192,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
