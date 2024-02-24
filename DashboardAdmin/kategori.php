@@ -64,8 +64,8 @@ if (!isset($_SESSION['username'])) {
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span></a>
         </li>
 
         <!-- Divider -->
@@ -75,7 +75,7 @@ if (!isset($_SESSION['username'])) {
         <li class="nav-item active">
           <a class="nav-link" href="#.php">
             <i class="fas fa-bars"></i>
-            <span>Kategori</span></a>
+            <span>Kategori Buku</span></a>
         </li>
 
         <!-- Divider -->
@@ -161,7 +161,7 @@ if (!isset($_SESSION['username'])) {
                 <a class="dropdown-item text-center mb-2"><span class="text-capitalize"><?php echo $_SESSION['sebagai']; ?></span></a>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="../signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
+                <a class="dropdown-item text-center p-2 bg-danger text-light rounded" href="signOut.php">Sign Out <i class="fa-solid fa-right-to-bracket"></i></a>
               </div>
             </li>
 

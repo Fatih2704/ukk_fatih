@@ -3,10 +3,10 @@
 session_start();
 
 // Check if 'nama' is set in the session, if not, redirect to the login page
-if (!isset($_SESSION['nama'])) {
-  header("Location: ../login.php");
-  exit();
-}
+// if (!isset($_SESSION['nama'])) {
+//   header("Location: ../login.php");
+//   exit();
+// }
 
 if (!isset($_SESSION['nisn'])) {
   header("Location: ../login.php");
@@ -330,7 +330,7 @@ $buku = queryReadData("SELECT * FROM buku");
                   </div>
                   <div class="modal-footer">
                     <a href="dashboard.php" class="btn btn-danger">Batal</a>
-                    <a href="pinjam.php?id=<?= $item['id_buku']; ?>" class="btn btn-success">Pinjam</a>
+                    <a href="pinjam.php?id=<?= $item['id_buku']; ?>" class="btn btn-success">Pinjam Buku ?</a>
                   </div>
                 </div>
               </div>

@@ -3,10 +3,10 @@
 session_start();
 
 // Check if 'nama' is set in the session, if not, redirect to the login page
-if (!isset($_SESSION['nama'])) {
-    header("Location: ../login.php");
-    exit();
-}
+// if (!isset($_SESSION['nama'])) {
+//     header("Location: ../login.php");
+//     exit();
+// }
 
 if (!isset($_SESSION['nisn'])) {
     header("Location: ../login.php");
@@ -106,10 +106,10 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
                 <div class="container-fluid">
 
                     <!-- DataTales Example -->
-                    <div class="mt-3 alert alert-success" role="alert">Riwayat History Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["nama"]); ?></span></div>
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-success">Daftar Buku</h6>
+                    <div class="mt-3 alert alert-success" role="alert">Riwayat History Buku Anda - <span class="fw-bold text-capitalize"><strong><?php echo htmlentities($_SESSION["nama"]); ?></strong></span></div>
+                    <div class="card shadow">
+                        <div class="card-header" align="center">
+                            <h4 class="m-0 font-weight-bold text-success">Daftar Riwayat Buku</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

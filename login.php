@@ -1,19 +1,20 @@
 <?php
 session_start();
 include "loginSystem/connect.php";
-if (isset($_POST['nisn']) && isset($_POST['nama'])) {
+if (isset($_POST['nisn'])) {
     // Get user input
+    // $nama = $_POST['nama'];
     $nisn = $_POST['nisn'];
-    $nama = $_POST['nama'];
     $password = $_POST['password'];
 
     // Query to check user credentials
-    $query = "SELECT * FROM member WHERE nisn='$nisn' AND nama='$nama' AND password='$password'";
+    $query = "SELECT * FROM member WHERE nisn='$nisn' AND password='$password'";
     $result = $connect->query($query);
 
     if ($result->num_rows == 1) {
+        $row= $result->fetch_assoc();
         // Login successful
-        $_SESSION['nama'] = $nama;
+        $_SESSION['nama'] = $row ['nama'];
         $_SESSION['nisn'] = $nisn;
         $_SESSION['password'] = $password;
         echo '<script>alert("Login Sukses!");window.location="DashboardMember/dashboard.php"</script>';
@@ -47,7 +48,7 @@ $connect->close();
                     <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
                     <h1 class="opacity">LOGIN</h1>
                     <form action="" method="POST">
-                        <input type="text" name="nama" placeholder="MASUKAN USERNAME" />
+                        <!-- <input type="text" name="nama" placeholder="MASUKAN USERNAME" /> -->
                         <input type="text" name="nisn" placeholder="MASUKAN NISN" />
                         <input type="password" name="password" placeholder="MASUKAN PASSWORD" />
                         <button type="submit" name="signIn" class="opacity">MASUK</button>

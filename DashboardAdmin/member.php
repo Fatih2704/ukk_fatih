@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Custom styles for this page -->
   <link href="../assets2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link rel="icon" type="png" href="../images/p.png">
+  <link rel="icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">
@@ -63,14 +63,14 @@ if (!isset($_SESSION['username'])) {
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span></a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="kategori.php">
             <i class="fas fa-bars"></i>
-            <span>Kategori</span></a>
+            <span>Kategori Buku</span></a>
         </li>
 
         <!-- Divider -->

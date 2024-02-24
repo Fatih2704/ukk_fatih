@@ -59,14 +59,14 @@ if (!isset($_SESSION['username'])) {
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="kategori.php">
-        <i class="fas fa-bars"></i>
-          <span>Kategori</span></a>
+          <i class="fas fa-bars"></i>
+          <span>Kategori Buku</span></a>
       </li>
 
       <!-- Divider -->
@@ -161,7 +161,7 @@ if (!isset($_SESSION['username'])) {
         <div class="container-fluid">
 
 
-          <div class="mt-2 alert alert-success" role="alert">Selamat Datang - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["nama"]); ?></span></div>
+          <div class="mt-2 alert alert-success" role="alert">Selamat Datang - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["nama"]); ?></span> Sebagai <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["sebagai"]); ?></span> </div>
           <!-- Content Row -->
           <div class="row">
 

@@ -8,8 +8,20 @@ if (isset($_GET['id'])) {
   $id = ($_GET["id"]);
 
   // menampilkan data dari database yang mempunyai id=$id
-  $query = "SELECT * FROM peminjaman
+  $query = "SELECT peminjaman.id AS peminjaman_id,
+  buku.cover AS cover,
+  buku.id_buku AS id_buku, 
+  buku.judul AS judul,
+  member.nisn AS nisn, 
+  member.nama AS nama, 
+  user.username AS username,
+  peminjaman.tgl_pinjam AS tgl_pinjam,
+  peminjaman.tgl_kembali AS tgl_kembali,
+  peminjaman.status AS status
+  FROM peminjaman
   INNER JOIN buku ON peminjaman.id_buku = buku.id_buku
+  INNER JOIN member ON peminjaman.nisn = member.nisn
+  INNER JOIN user ON peminjaman.id_user = user.id
   WHERE peminjaman.id='$id'";
   $result = mysqli_query($connection, $query);
 
@@ -84,23 +96,23 @@ if (!isset($_SESSION['username'])) {
         </a>
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-          <a class="nav-link" href="index.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+          <a class="nav-link" href="peminjaman.php">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>Kembali</span></a>
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider">
+        <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Peminjaman</span>
+            <span>Validasi</span>
           </a>
           <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item active" href="peminjaman.php">Daftar Pinjaman</a>
+              <a class="collapse-item active" href="#.php">Validasi Persetujuan</a>
             </div>
           </div>
         </li>
@@ -217,9 +229,29 @@ if (!isset($_SESSION['username'])) {
                   </div>
                   <div class="row">
                     <div class="col">
-                      <a href="setuju.php?id=<?= $item['id']; ?>"><span data-placement='top' data-toggle='tooltip' title='Setuju'><button class="btn btn-success">Setuju</button></span></a>
-                      <a href="tidaksetuju.php?id=<?= $item['id']; ?>"><span data-placement='top' data-toggle='tooltip' title='Tidak Setuju'><button class="btn btn-danger">Tidak Setuju</button></span></a>&nbsp;
-                      <a title="kembali" class="btn btn-secondary" href="peminjaman.php"><i class="fas fa-reply"></i>Kembali</a>
+                      <?php
+                      if ($item['status'] == 0) {
+                      ?>
+                        <a href="setuju.php?id=<?= $item['peminjaman_id']; ?>"><span data-placement='top' data-toggle='tooltip' title='Setuju'><button class="btn btn-success">Setuju</button></span></a>&nbsp;
+                        <a href="tidaksetuju.php?id=<?= $item['peminjaman_id']; ?>"><span data-placement='top' data-toggle='tooltip' title='Tidak Setuju'><button class="btn btn-danger">Tidak Setuju</button></span></a>&nbsp;
+                        <a title="kembali" class="btn btn-secondary" href="peminjaman.php">Kembali</a>
+                      <?php
+                      } elseif ($item['status'] == 1) {
+                      ?>
+                        <a href="tidaksetuju.php?id=<?= $item['peminjaman_id']; ?>"><span data-placement='top' data-toggle='tooltip' title='Tidak Setuju'><button class="btn btn-danger">Tidak Setuju</button></span></a>&nbsp;
+                        <a title="kembali" class="btn btn-secondary" href="peminjaman.php">Kembali</a>
+                      <?php
+                      } elseif ($item['status'] == 2) {
+                      ?>
+                        <a href="setuju.php?id=<?= $item['peminjaman_id']; ?>"><span data-placement='top' data-toggle='tooltip' title='Setuju'><button class="btn btn-success">Setuju</button></span></a>&nbsp;
+                        <a title="kembali" class="btn btn-secondary" href="peminjaman.php">Kembali</a>
+                      <?php
+                      } else {
+                      ?>
+                        <a title="kembali" class="btn btn-secondary" href="peminjaman.php">Kembali</a>
+                      <?php
+                      }
+                      ?>
                     </div>
                   </div>
                 </div>

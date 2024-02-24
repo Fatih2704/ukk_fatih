@@ -20,6 +20,7 @@ $peminjaman = queryReadData("SELECT * FROM peminjaman
 INNER JOIN buku ON peminjaman.id_buku = buku.id_buku
 INNER JOIN member ON peminjaman.nisn = member.nisn
 INNER JOIN user ON peminjaman.id_user = user.id");
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +45,7 @@ INNER JOIN user ON peminjaman.id_user = user.id");
 
   <!-- Custom styles for this page -->
   <link href="../assets2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link rel="icon" type="png" href="../images/p.png">
+  <link rel="icon" type="png" href="../images/p.png">
 </head>
 
 <body id="page-top">
@@ -67,14 +68,14 @@ INNER JOIN user ON peminjaman.id_user = user.id");
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span></a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="kategori.php">
             <i class="fas fa-bars"></i>
-            <span>Kategori</span></a>
+            <span>Kategori Buku</span></a>
         </li>
 
         <!-- Divider -->

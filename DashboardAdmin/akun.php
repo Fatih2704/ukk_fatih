@@ -67,14 +67,14 @@ if (!isset($_SESSION['username'])) {
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span></a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="kategori.php">
             <i class="fas fa-bars"></i>
-            <span>Kategori</span></a>
+            <span>Kategori Buku</span></a>
         </li>
 
         <!-- Divider -->
@@ -183,6 +183,7 @@ if (!isset($_SESSION['username'])) {
                       <th>No</th>
                       <th>Username</th>
                       <th>Nama</th>
+                      <th>No Telp</th>
                       <th>Sebagai</th>
                       <th>Aksi</th>
 
@@ -198,6 +199,7 @@ if (!isset($_SESSION['username'])) {
                         <td align="center"><?php echo $no++ ?></td>
                         <td align="center"><?php echo $item['username'] ?></td>
                         <td align="center"><?php echo $item['nama'] ?></td>
+                        <td align="center"><?php echo $item['no_telp'] ?></td>
                         <td align="center"><?php echo $item['sebagai'] ?></td>
                         <td align="center">
                           <a title="edit" data-toggle="modal" data-target="#edit<?= $id; ?>" class="btn btn-warning" title="Edit"><i class="fas fa-edit"></i></a>
@@ -224,6 +226,9 @@ if (!isset($_SESSION['username'])) {
 
                                 <label for="nama">Nama Lengkap</label>
                                 <input type="text" id="nama" name="nama" class="form-control" value="<?= $item['nama'] ?>" ;>
+
+                                <label for="nama">No Telepon</label>
+                                <input type="text" id="no_telp" name="no_telp" class="form-control" value="<?= $item['no_telp'] ?>" ;>
 
                                 <label for="password">Password</label>
                                 <input type="text" id="password" name="password" class="form-control" value="<?= $item['password']; ?>">
@@ -282,6 +287,7 @@ if (!isset($_SESSION['username'])) {
                       $username = $_POST['username'];
                       $password = $_POST['password'];
                       $nama = $_POST['nama'];
+                      $no_telp = $_POST['no_telp'];
                       $sebagai = $_POST['sebagai'];
 
                       // Check if the username already exists
@@ -295,7 +301,7 @@ if (!isset($_SESSION['username'])) {
                       }
 
                       // If the username is unique, proceed with the insert
-                      $insertQuery = mysqli_query($connection, "INSERT INTO user VALUES('', '$username', '$password', '$nama', '$sebagai')");
+                      $insertQuery = mysqli_query($connection, "INSERT INTO user VALUES('', '$username', '$password', '$nama', '$no_telp', '$sebagai')");
                       if ($insertQuery) {
                         echo "<div class='alert alert-success'>
                     <strong>Success!</strong> Redirecting you back in 1 second.
@@ -309,6 +315,7 @@ if (!isset($_SESSION['username'])) {
                       $id = $_POST['id'];
                       $username = $_POST['username'];
                       $nama = $_POST['nama'];
+                      $no_telp = $_POST['no_telp'];
                       $password = $_POST['password'];
                       $sebagai = $_POST['sebagai'];
 
@@ -367,12 +374,16 @@ if (!isset($_SESSION['username'])) {
                       <input type="text" name="username" id="username" required="required" placeholder="Username" autocomplete="off" class="form-control">
                     </div>
                     <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="text" name="password" id="password" required="required" placeholder="Password" autocomplete="off" class="form-control">
+                    </div>
+                    <div class="form-group">
                       <label for="nama">Nama</label>
                       <input type="text" name="nama" id="nama" required="required" placeholder="Nama" autocomplete="off" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="text" name="password" id="password" required="required" placeholder="Password" autocomplete="off" class="form-control">
+                      <label for="nama">No Telepon</label>
+                      <input type="text" name="no_telp" id="no_telp" required="required" placeholder="Nama" autocomplete="off" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Sebagai</label>

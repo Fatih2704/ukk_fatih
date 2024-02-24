@@ -123,7 +123,7 @@ function upload()
   $namaFileBaru .= ".";
   $namaFileBaru .= $ekstensiGambar;
 
-  move_uploaded_file($tmpName, '../../imgDB/' . $namaFileBaru);
+  move_uploaded_file($tmpName, '../imgDB/' . $namaFileBaru);
   return $namaFileBaru;
 }
 
@@ -137,7 +137,7 @@ function upload_isi()
   $file_tmp = $_FILES['isi_buku']['tmp_name'];
 
   // Lokasi Penempatan file
-  $dirUpload = "../../isi-buku/";
+  $dirUpload = "../isi-buku/";
   $linkBerkas = $dirUpload . $namaFile;
 
   // Validasi Format File (contoh: hanya menerima format PDF)
@@ -328,10 +328,16 @@ function pinjamBuku($dataBuku)
   $idAdmin = $dataBuku["id_user"];
   $tglPinjam = $dataBuku["tgl_pinjam"];
   $tglKembali = $dataBuku["tgl_kembali"];
+  $harga = $dataBuku["harga"];
   $status = 0;
+  $queryCekPeminjaman = "SELECT * FROM peminjaman WHERE id_buku = '$idBuku' AND nisn = '$nisn' AND (status = '0' OR status = '1')";
+  $resultCekPeminjaman = mysqli_query($connection, $queryCekPeminjaman);
 
-
-  $queryPinjam = "INSERT INTO peminjaman (id, id_buku, nisn, id_user, tgl_pinjam, tgl_kembali, status) VALUES(null, '$idBuku', $nisn, $idAdmin, '$tglPinjam', '$tglKembali', '$status')";
+  if (mysqli_num_rows($resultCekPeminjaman) > 0) {
+    echo "<script>alert('Anda sudah meminjam buku ini');</script>";
+    return 0;
+  }
+  $queryPinjam = "INSERT INTO peminjaman (id, id_buku, nisn, id_user, tgl_pinjam, tgl_kembali, harga, status) VALUES(null, '$idBuku', $nisn, $idAdmin, '$tglPinjam', '$tglKembali', '$harga', '$status')";
   mysqli_query($connection, $queryPinjam);
   return mysqli_affected_rows($connection);
 }

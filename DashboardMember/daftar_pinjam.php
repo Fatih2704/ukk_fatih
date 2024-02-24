@@ -23,12 +23,22 @@ pengembalian();
 // Assuming $id is the specific value you want to match
 $statusArray = [0, 1, 2];
 $statusString = implode(',', $statusArray);
-$peminjaman = queryReadData("SELECT * FROM peminjaman
+$peminjaman = queryReadData("SELECT peminjaman.id AS peminjaman_id,
+buku.cover AS cover,
+buku.id_buku AS id_buku, 
+buku.judul AS judul,
+member.nisn AS nisn, 
+member.nama AS nama, 
+user.username AS username,
+user.no_telp AS no_telp,
+peminjaman.tgl_pinjam AS tgl_pinjam,
+peminjaman.tgl_kembali AS tgl_kembali,
+peminjaman.status AS status
+FROM peminjaman
 INNER JOIN buku ON peminjaman.id_buku = buku.id_buku
 INNER JOIN member ON peminjaman.nisn = member.nisn
 INNER JOIN user ON peminjaman.id_user = user.id
-WHERE peminjaman.nisn = '$nisn' and status IN ($statusString)");
-
+WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
 // Replace $id with the actual condition you want to use in the WHERE clause
 ?>
 
@@ -107,11 +117,28 @@ WHERE peminjaman.nisn = '$nisn' and status IN ($statusString)");
         <div class="container-fluid">
 
           <!-- DataTales Example -->
-          <div class="mt-3 alert alert-success" role="alert">Riwayat Peminjaman Buku Anda - <span class="fw-bold text-capitalize"><?php echo htmlentities($_SESSION["nama"]); ?></span></div>
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-success">Daftar Buku</h6>
+          <div class="mt-3 alert alert-success" role="alert">Riwayat Peminjaman Buku Anda - <strong><span class="fw-bold text-capitalize"><strong></strong><?php echo htmlentities($_SESSION["nama"]); ?></strong></span></div>
+
+          <div class="card shadow">
+            <div class="card-header" align="center">
+              <h4 class="font-weight-bold text-success">Daftar Peminjaman Buku</h4>
             </div>
+
+            <?php
+            $alertDisplayed = false;
+
+            foreach ($peminjaman as $item) :
+              if ($item['status'] == 0 && !$alertDisplayed) {
+            ?>
+                <div class="alert alert-danger" align="center">
+                  <strong>Peringatan!</strong> Silahkan kirim bukti transaksi ke nomor yang tertera jika ingin membaca buku.
+                </div>
+            <?php
+                $alertDisplayed = true; // Set variabel ini menjadi true agar alert hanya ditampilkan sekali.
+              }
+            endforeach;
+            ?>
+
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -121,13 +148,11 @@ WHERE peminjaman.nisn = '$nisn' and status IN ($statusString)");
                       <th>Cover</th>
                       <th>Id Buku</th>
                       <th>Judul Buku</th>
-                      <th>NISN</th>
-                      <th>Nama</th>
                       <th>Nama Petugas</th>
+                      <th>Nomor Petugas</th>
                       <th>Tgl. Pinjam</th>
                       <th>Tgl. Selesai</th>
                       <th width="100">Action</th>
-
                     </tr>
                   </thead>
                   <tbody>
@@ -138,27 +163,31 @@ WHERE peminjaman.nisn = '$nisn' and status IN ($statusString)");
                     ?>
                         <tr>
                           <td align="center"><?php echo $no++ ?></td>
-                          <td>
+                          <td align="center">
                             <img src="../imgDB/<?= $item['cover']; ?>" alt="" width="70px" height="100px" style="border-radius: 5px;">
                           </td>
-
                           <td><?= $item["id_buku"]; ?></td>
                           <td><?= $item["judul"]; ?></td>
-                          <td><?= $item["nisn"]; ?></td>
-                          <td><?= $item["nama"]; ?></td>
                           <td><?= $item["username"]; ?></td>
+                          <td><?= $item["no_telp"]; ?></td>
                           <td><?= $item["tgl_pinjam"]; ?></td>
                           <td><?= $item["tgl_kembali"]; ?></td>
                           <td>
                             <?php
                             if ($item['status'] == '0') {
-                              echo '<div><b>Menunggu Persetujuan...</b></div>';
+                              echo '<b class="badge bg-warning">Menunggu Persetujuan</b>';
                             } elseif ($item['status'] == '1') {
                             ?>
-                              <a href="bacabuku.php?id_buku=<?= $item['id_buku']; ?>" class="btn btn-success">Baca</a>
+                              <div>
+                                <a href="bacabuku.php?id_buku=<?= $item['id_buku']; ?>" target="blank" class="btn btn-success mt-1"><i class="fas fa-book-open"></i>Baca Bukunya</a>
+                              </div>
+                              <div>
+                                <a href="kembali.php?id=<?= $item['peminjaman_id']; ?>" class="btn btn-warning mt-1"> Kembalikan</a>
+                              </div>
                             <?php
-                            } else {
-                              echo '<div><b>Tidak diizinkan</b></div>';
+                            }
+                            if ($item['status'] == '2') {
+                              echo '<b class="badge bg-danger">Tidak Disetujui</b>';
                             }
                             ?>
                           </td>

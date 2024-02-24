@@ -57,7 +57,7 @@ $query = queryReadData("SELECT * FROM buku WHERE id_buku = '$idBuku'");
 
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="buku.php">
-                    <div class="sidebar-brand-text fas fa-book"> perpus</div>
+                    <div class="sidebar-brand-text fas fa-book"> Fapus</div>
                 </a>
 
                 <!-- Divider -->
@@ -65,41 +65,22 @@ $query = queryReadData("SELECT * FROM buku WHERE id_buku = '$idBuku'");
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a>
+                    <a class="nav-link" href="buku.php">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span>Kembali</span></a>
                 </li>
-
                 <!-- Divider -->
-                <hr class="sidebar-divider">
-
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Pengguna</span>
-                    </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded ">
-                            <a class="collapse-item" href="member.php">Daftar Akun</a>
-                            <a class="collapse-item" href="peminjaman.php">Daftar Member</a>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider">
+                <hr class="sidebar-divider my-0">
 
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item active">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Buku</span>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Detail</span>
                     </a>
                     <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item active" href="#">Daftar Buku</a>
-                            <a class="collapse-item" href="peminjaman.php">Daftar Peminjaman</a>
+                            <a class="collapse-item active" href="#">Detail Buku</a>
                         </div>
                     </div>
                 </li>
