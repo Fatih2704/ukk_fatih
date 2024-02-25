@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Feb 2024 pada 17.39
+-- Waktu pembuatan: 25 Feb 2024 pada 02.51
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -112,22 +112,6 @@ CREATE TABLE `peminjaman` (
   `harga` varchar(255) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `peminjaman`
---
-
-INSERT INTO `peminjaman` (`id`, `id_buku`, `nisn`, `id_user`, `tgl_pinjam`, `tgl_kembali`, `harga`, `status`) VALUES
-(4, 'KB0001', 123, 36, '2024-02-20', '2024-02-18', '', 3),
-(5, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(6, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(7, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(8, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(9, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(10, 'KB0001', 123, 36, '2024-02-23', '2024-02-19', '', 3),
-(11, 'KB0001', 123, 36, '2024-02-23', '2024-02-27', '', 2),
-(12, 'KB0001', 123, 36, '2024-02-23', '2024-02-22', '', 3),
-(13, 'KB0001', 123, 45, '2024-02-24', '2024-02-29', 'Rp. 5.000', 1);
 
 -- --------------------------------------------------------
 
