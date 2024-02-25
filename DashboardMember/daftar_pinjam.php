@@ -138,6 +138,21 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
               }
             endforeach;
             ?>
+            
+            <?php
+            $alertDisplayed = false;
+
+            foreach ($peminjaman as $item) :
+              if ($item['status'] == 1 && !$alertDisplayed) {
+            ?>
+                <div class="alert alert-warning" align="center">
+                  Klik <strong>"Kembalikan"</strong>  Jika Sudah Tenggat Pada Waktunya.
+                </div>
+            <?php
+                $alertDisplayed = true; // Set variabel ini menjadi true agar alert hanya ditampilkan sekali.
+              }
+            endforeach;
+            ?>
 
             <div class="card-body">
               <div class="table-responsive">
