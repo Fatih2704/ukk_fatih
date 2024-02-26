@@ -184,13 +184,13 @@ INNER JOIN user ON peminjaman.id_user = user.id");
                       <th>Cover</th>
                       <th>ID Buku</th>
                       <th>Judul Buku</th>
+                      <th>Harga Buku</th>
                       <th>NISN</th>
                       <th>Nama</th>
                       <th>Nama Petugas</th>
                       <th>Tgl. Pinjam</th>
                       <th>Tgl. Selesai</th>
                       <th>Status</th>
-
                     </tr>
                   </thead>
                   <tbody>
@@ -207,6 +207,7 @@ INNER JOIN user ON peminjaman.id_user = user.id");
 
                           <td><?= $item["id_buku"]; ?></td>
                           <td><?= $item["judul"]; ?></td>
+                          <td><?= $item["harga"]; ?></td>
                           <td><?= $item["nisn"]; ?></td>
                           <td><?= $item["nama"]; ?></td>
                           <td><?= $item["username"]; ?></td>

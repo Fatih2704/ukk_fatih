@@ -31,6 +31,7 @@ member.nisn AS nisn,
 member.nama AS nama, 
 user.username AS username,
 user.no_telp AS no_telp,
+peminjaman.harga AS harga,
 peminjaman.tgl_pinjam AS tgl_pinjam,
 peminjaman.tgl_kembali AS tgl_kembali,
 peminjaman.status AS status
@@ -138,7 +139,7 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
               }
             endforeach;
             ?>
-            
+
             <?php
             $alertDisplayed = false;
 
@@ -146,7 +147,7 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
               if ($item['status'] == 1 && !$alertDisplayed) {
             ?>
                 <div class="alert alert-warning" align="center">
-                  Klik <strong>"Kembalikan"</strong>  Jika Sudah Tenggat Pada Waktunya.
+                  Klik <strong>"Kembalikan"</strong> Jika Sudah Tenggat Pada Waktunya.
                 </div>
             <?php
                 $alertDisplayed = true; // Set variabel ini menjadi true agar alert hanya ditampilkan sekali.
@@ -165,6 +166,7 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                       <th>Judul Buku</th>
                       <th>Nama Petugas</th>
                       <th>Nomor Petugas</th>
+                      <th>Harga</th>
                       <th>Tgl. Pinjam</th>
                       <th>Tgl. Selesai</th>
                       <th width="100">Action</th>
@@ -173,9 +175,15 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                   <tbody>
                     <?php
                     $no = 1; // Nomor urut dimulai dari 1
+                    $totalHarga = 0; // Inisialisasi total harga
+
                     if (isset($peminjaman) && is_array($peminjaman) && count($peminjaman) > 0) {
                       foreach ($peminjaman as $item) :
+                        // Menghapus karakter non-angka seperti "Rp." dan "."
+                        $hargaBuku = floatval(preg_replace("/[^0-9]/", "", $item['harga']));
+                        $totalHarga += $hargaBuku; // Menambahkan harga buku ke total
                     ?>
+
                         <tr>
                           <td align="center"><?php echo $no++ ?></td>
                           <td align="center">
@@ -185,6 +193,7 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                           <td><?= $item["judul"]; ?></td>
                           <td><?= $item["username"]; ?></td>
                           <td><?= $item["no_telp"]; ?></td>
+                          <td><?= $item["harga"]; ?></td>
                           <td><?= $item["tgl_pinjam"]; ?></td>
                           <td><?= $item["tgl_kembali"]; ?></td>
                           <td>
@@ -212,6 +221,10 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                     ?>
                   </tbody>
                 </table>
+              </div>
+              <div class="card-footer">
+                <strong>Total Harga: </strong>
+                Rp. <?= number_format($totalHarga, 0, ',', '.'); ?>
               </div>
             </div>
           </div>
