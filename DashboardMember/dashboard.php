@@ -21,7 +21,41 @@ require "../config/config.php";
 // query read semua buku
 $buku = queryReadData("SELECT * FROM buku");
 //search buku
-
+if (isset($_POST["search"])) {
+  $buku = search($_POST["keyword"]);
+}
+//read buku Dongeng
+if (isset($_POST["Dongeng"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Dongeng'");
+}
+//read buku Bisnis
+if (isset($_POST["Komik"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Komik'");
+}
+//read buku Novel
+if (isset($_POST["Novel"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Novel'");
+}
+//read buku Kamus
+if (isset($_POST["Kamus"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Kamus'");
+}
+//read buku Filsafat
+if (isset($_POST["Filsafat"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Filsafat'");
+}
+//read buku Light Novel(Novel Ringan)
+if (isset($_POST["Light Novel(Novel Ringan)"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Light Novel(Novel Ringan)'");
+}
+//read buku Majalah
+if (isset($_POST["Majalah"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Majalah'");
+}
+//read buku Manga
+if (isset($_POST["Manga"])) {
+  $buku = queryReadData("SELECT * FROM buku WHERE kategori = 'Manga'");
+}
 ?>
 
 <head>
