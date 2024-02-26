@@ -118,7 +118,6 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
                                         <tr align="center">
                                             <th>No</th>
                                             <th>Cover</th>
-                                            <th>ID Buku</th>
                                             <th>Judul Buku</th>
                                             <th>NISN</th>
                                             <th>Nama Pengguna</th>
@@ -138,8 +137,6 @@ WHERE peminjaman.nisn = '$nisn' and status = '3 '");
                                                     <td>
                                                         <img src="../imgDB/<?= $item['cover']; ?>" alt="" width="70px" height="100px" style="border-radius: 5px;">
                                                     </td>
-
-                                                    <td><?= $item["id_buku"]; ?></td>
                                                     <td><?= $item["judul"]; ?></td>
                                                     <td><?= $item["nisn"]; ?></td>
                                                     <td><?= $item["nama"]; ?></td>

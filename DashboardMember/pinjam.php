@@ -156,7 +156,7 @@ if (isset($_POST["pinjam"])) {
           <?php endforeach; ?>
         </div>
 
-        <div class="card mt-4">
+        <!-- <div class="card mt-4">
           <h5 class="card-header">Data Lengkap Siswa</h5>
           <div class="alert alert-danger" role="alert"><Strong>Peringatan!</Strong> Jika Data Kamu Yang Tertera Salah, Silahkan Hubungi Develop</div>
           <div class="card-body d-flex flex-wrap gap-4 justify-content-center">
@@ -201,7 +201,7 @@ if (isset($_POST["pinjam"])) {
               <?php endforeach; ?>
             </form>
           </div>
-        </div>
+        </div> -->
 
         <div class="card mt-4">
           <h5 class="card-header">Form Pinjam Buku</h5>
@@ -230,7 +230,7 @@ if (isset($_POST["pinjam"])) {
                   ?>
                 </select>
                 <!-- <span class="input-group-text" id="basic-addon1">Telpon Petugas</span> -->
-                <input type="number" name="no_telp" id="no_telp" class="form-control" placeholder="No. Telepon" aria-label="No. Telepon" aria-describedby="basic-addon1" readonly>
+                <input type="number" name="no_telp" id="no_telp" class="form-control" placeholder="Nomor Petugas " aria-label="No. Telepon" aria-describedby="basic-addon1" readonly>
               </div>
 
               <div class="alert alert-warning" role="alert">Jika Ingin Pesan Harian, Pilih<strong> Non-Paket</strong></div>

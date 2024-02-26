@@ -25,6 +25,7 @@ buku.judul AS judul,
 member.nisn AS nisn, 
 member.nama AS nama, 
 user.username AS username,
+peminjaman.harga AS harga,
 peminjaman.tgl_pinjam AS tgl_pinjam,
 peminjaman.tgl_kembali AS tgl_kembali,
 peminjaman.status AS status
@@ -99,7 +100,7 @@ if (mysqli_num_rows($sql) > 0) {
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-          <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house"></i>
             <span>Home</span></a>
         </li>
 
@@ -189,8 +190,8 @@ if (mysqli_num_rows($sql) > 0) {
                     <tr align="center">
                       <th>No</th>
                       <th>Cover</th>
-                      <th>Id Buku</th>
                       <th>Judul Buku</th>
+                      <th>Harga Buku</th>
                       <th>NISN</th>
                       <th>Nama</th>
                       <th>Nama Petugas</th>
@@ -198,7 +199,6 @@ if (mysqli_num_rows($sql) > 0) {
                       <th>Tgl. Selesai</th>
                       <th>Status</th>
                       <th>Action</th>
-
                     </tr>
                   </thead>
                   <tbody>
@@ -207,14 +207,13 @@ if (mysqli_num_rows($sql) > 0) {
                     if (isset($peminjaman) && is_array($peminjaman) && count($peminjaman) > 0) {
                       foreach ($peminjaman as $item) :
                     ?>
-                        <tr>
+                        <tr align="center">
                           <td align="center"><?php echo $no++ ?></td>
                           <td>
                             <img src="../imgDB/<?= $item['cover']; ?>" alt="" width="70px" height="100px" style="border-radius: 5px;">
                           </td>
-
-                          <td><?= $item["id_buku"]; ?></td>
                           <td><?= $item["judul"]; ?></td>
+                          <td><?= $item["harga"]; ?></td>
                           <td><?= $item["nisn"]; ?></td>
                           <td><?= $item["nama"]; ?></td>
                           <td><?= $item["username"]; ?></td>

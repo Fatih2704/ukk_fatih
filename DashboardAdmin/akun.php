@@ -88,7 +88,7 @@ if (!isset($_SESSION['username'])) {
           </a>
           <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded ">
-              <a class="collapse-item active" href="akun.php">Daftar Akun</a>
+              <a class="collapse-item active" href="akvn.php">Daftar Akun</a>
               <a class="collapse-item" href="member.php">Daftar Member</a>
             </div>
           </div>
@@ -186,7 +186,6 @@ if (!isset($_SESSION['username'])) {
                       <th>No Telp</th>
                       <th>Sebagai</th>
                       <th>Aksi</th>
-
                     </tr>
                   </thead>
                   <tbody>

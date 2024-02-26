@@ -291,7 +291,7 @@ if (isset($_POST["edit"])) {
                                                                 </div>
 
                                                                 <div class="form-floating mt-3 mb-3">
-                                                                    <textarea class="form-control" placeholder="sinopsis tentang buku ini" name="deskripsi" id="deskripsi" style="height: 100px"></textarea>
+                                                                    <textarea class="form-control" placeholder="sinopsis tentang buku ini" name="deskripsi" id="deskripsi" style="height: 100px"><?= $item["deskripsi"]; ?></textarea>
                                                                     <label for="floatingTextarea2">Deskripsi</label>
                                                                 </div>
 

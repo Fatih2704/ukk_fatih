@@ -3,9 +3,7 @@ require "loginSystem/connect.php";
 if (isset($_POST["signUp"])) {
 
     if (signUp($_POST) > 0) {
-        echo "<script>
-    alert('Sign Up berhasil!')
-    </script>";
+        echo '<script>alert("Register Berhasil !");window.location="login.php"</script>';
     } else {
         echo "<script>
     alert('Sign Up gagal!')
@@ -36,14 +34,14 @@ if (isset($_POST["signUp"])) {
                 <form action="" method="POST">
                     <div style="display: flex; gap: 50px;">
                         <div>
-                            <input type="text" name="nisn" placeholder="Masukan NISN" />
-                            <input type="text" name="nama" placeholder="Masukan Nama" />
-                            <input type="text" name="password" placeholder="Masukan Password" />
+                            <input type="text" name="nisn" placeholder="Masukan NISN" required>
+                            <input type="text" name="nama" placeholder="Masukan Nama" required>
+                            <input type="text" name="password" placeholder="Masukan Password" required>
                         </div>
                         <div>
-                            <input type="text" name="kelas" placeholder="Masukan Kelas" />
-                            <input type="text" name="jurusan" placeholder="Masukan Jurusan" />
-                            <input type="text" name="alamat" placeholder="Masukan Alamat" />
+                            <input type="text" name="kelas" placeholder="Masukan Kelas" required>
+                            <input type="text" name="jurusan" placeholder="Masukan Jurusan" required>
+                            <input type="text" name="alamat" placeholder="Masukan Alamat" required>
                         </div>
                     </div>
                     <button class="opacity" name="signUp">SIGN UP</button>

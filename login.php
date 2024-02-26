@@ -51,7 +51,7 @@ $connect->close();
                         <!-- <input type="text" name="nama" placeholder="MASUKAN USERNAME" /> -->
                         <input type="text" name="nisn" placeholder="MASUKAN NISN" />
                         <input type="password" name="password" placeholder="MASUKAN PASSWORD" />
-                        <button type="submit" name="signIn" class="opacity">MASUK</button>
+                        <button type="submit" name="signUp" class="opacity">MASUK</button>
                         <button onclick="window.location.href='index.php'" type="button">KEMBALI</button>
                     </form>
                     <div class="opacity" style="text-align: center;">

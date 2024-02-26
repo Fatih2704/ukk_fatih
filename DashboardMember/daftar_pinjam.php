@@ -132,7 +132,7 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
               if ($item['status'] == 0 && !$alertDisplayed) {
             ?>
                 <div class="alert alert-danger" align="center">
-                  <strong>Peringatan!</strong> Silahkan kirim bukti transaksi ke nomor yang tertera jika ingin membaca buku.
+                  <strong>Peringatan!</strong> Jika sudah bayar, Silahkan kirim bukti transaksi ke nomor yang tertera jika ingin membaca buku.
                 </div>
             <?php
                 $alertDisplayed = true; // Set variabel ini menjadi true agar alert hanya ditampilkan sekali.
@@ -162,7 +162,6 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                     <tr align="center">
                       <th>No</th>
                       <th>Cover</th>
-                      <th>Id Buku</th>
                       <th>Judul Buku</th>
                       <th>Nama Petugas</th>
                       <th>Nomor Petugas</th>
@@ -189,7 +188,6 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                           <td align="center">
                             <img src="../imgDB/<?= $item['cover']; ?>" alt="" width="70px" height="100px" style="border-radius: 5px;">
                           </td>
-                          <td><?= $item["id_buku"]; ?></td>
                           <td><?= $item["judul"]; ?></td>
                           <td><?= $item["username"]; ?></td>
                           <td><?= $item["no_telp"]; ?></td>
@@ -200,13 +198,16 @@ WHERE peminjaman.nisn = '$nisn' AND peminjaman.status IN ($statusString)");
                             <?php
                             if ($item['status'] == '0') {
                               echo '<b class="badge bg-warning">Menunggu Persetujuan</b>';
+                            ?>
+                              <a href="batalPinjam.php?id=<?= $item['peminjaman_id']; ?>" class="btn btn-danger mt-2" style="width:80%;" onclick="return confirm('Anda Yakin Ingin Membatalkannya?');">Batal Pinjam?</a>
+                            <?php
                             } elseif ($item['status'] == '1') {
                             ?>
                               <div>
-                                <a href="bacabuku.php?id_buku=<?= $item['id_buku']; ?>" target="blank" class="btn btn-success mt-1"><i class="fas fa-book-open"></i>Baca Bukunya</a>
+                                <a href="bacabuku.php?id_buku=<?= $item['id_buku']; ?>" target="blank" class="btn btn-success mt-1"><i class="fas fa-book-open"></i>Baca Buku</a>
                               </div>
                               <div>
-                                <a href="kembali.php?id=<?= $item['peminjaman_id']; ?>" class="btn btn-warning mt-1"> Kembalikan</a>
+                                <a href="kembali.php?id=<?= $item['peminjaman_id']; ?>" class="btn btn-warning mt-1" onclick="return confirm('Anda Yakin Ingin Mengembalikannya?');"> Kembalikan</a>
                               </div>
                             <?php
                             }

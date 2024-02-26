@@ -5,6 +5,6 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-echo '<script>alert("Anda Telat Logout!");window.location="../admin.php"</script>';
+echo '<script>alert("Anda Telah Logout!");window.location="../admin.php"</script>';
   exit;
 ?>

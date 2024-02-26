@@ -12,11 +12,9 @@ if (isset($_SESSION['sebagai'])) {
   }
 }
 
-
 if (isset($_POST['btn-login'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
-
 
   // Query to check user credentials
   $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
@@ -55,7 +53,6 @@ if (isset($_POST['btn-login'])) {
 }
 $connect->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
