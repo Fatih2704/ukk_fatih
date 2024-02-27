@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Feb 2024 pada 17.39
+-- Waktu pembuatan: 27 Feb 2024 pada 05.58
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -46,9 +46,9 @@ CREATE TABLE `buku` (
 
 INSERT INTO `buku` (`cover`, `id_buku`, `kategori`, `judul`, `pengarang`, `penerbit`, `thn_terbit`, `jml_halaman`, `deskripsi`, `isi_buku`) VALUES
 ('65d741ce4fcc1.jpg', 'KB0001', 'Novel', 'Sejarah Dunia Yang di Sembunyikan', 'Jonathan Black', 'Gramedia Pustaka Utama', '2015-05-14', 636, 'Buku Sejarah Dunia Yang Disembunyikan yang ditulis oleh Jonathan Black merupakan buku yang mengungkapkan tentang keraguan dan kepercayaan kita akan sejarah mitologi Yunani dan Mesir Kuno serta cerita rakyat Yahudi yang tidak dapat kita lihat langsung kebenarannya. Buku ini ditulis dengan tujuan memberitahu pembaca tentang fakta dasar sejarah yang berbeda dari yang kita tahu. Pembaca akan mendapatkan pengetahuan baru dan lebih tercerahkan akan wawasan sejarah dunia.', 'Sejarah Dunia yang Disembunyikan (Jonathan Black).pdf'),
-('65da1a615d592.jpg', 'KB0002', 'Novel', 'Berani Tidak Disukai', 'Ichiro Kishimi dan Fumitake Koga', 'Gramedia Pustaka Utama', '2019-10-07', 350, 'Berani Tidak Disukai memiliki judul asli &quot;The Courage to be Disliked: How to Free Yourself, Change Your Life and Achieve Real Happiness&quot;. Buku karangan Ichiro kishimi dan Fumitake Koga ini telah terjual sebanyak lebih dari 3,5 juta eksemplar. Buku ini laris di pasaran hingga diterjemahkan ke dalam berbagai bahasa, salah satunya bahasa Indonesia. Berani Tidak Disukai merupakan buku yang berisikan dialog antara seorang filsuf dengan seorang pemuda. Dialog yang dilakukan selama lima malam ini, berisi percakapan dari seorang pemuda yang tidak puas dengan kehidupannya dan seorang filsuf yang mengajarkannya tentang bagaimana cara mendapatkan kebahagiaan di dunia. Dialog-dialog tersebut dibingkai menjadi lima percakapan yang tiap percakapannya memuat satu inti menarik tentang hidup.\r\n\r\nDalam buku ini, pembaca akan merasakan bahwa seluruh rangkaian kata yang ada di dalam-nya seperti sebuah kutipan. Hampir semuanya berisikan makna indah dan membuat pembaca berpikir tentang bagaimana cara untuk berubah menjadi lebih baik. Berani Tidak Disukai membantu para pembaca untuk menggali kekuatan di dalam dirinya sebagai bekal meraih kebahagiaan yang diinginkan. Ada banyak hal baru yang akan membuat pembaca sadar bahwa beberapa hal seharusnya tidak dilakukan saat ini karena hal tersebut bisa saja menghambat kebahagiaan pada masa depan.\r\n\r\nSalah satu contohnya adalah mengenang trauma masa lalu dan menjadikan kehidupan orang lain sebagai standar kebahagiaan. Setelah membaca buku ini, pikiran pembaca menjadi semakin terbuka pada langkah baru untuk mengubah hidup menjadi lebih baik lewat tindakan berani untuk tidak disukai oleh orang lain. Bagian menarik dari buku ini ialah ketika seorang filsuf berbicara menurut pandangannya tanpa berusaha menggurui si pemuda. Namun, pandangan dari sang filsuf tersebut justru dapat menjadi pembelajaran bagi pembaca.', 'Berani Tidak Disukai (Ichiro Kishimi, Fumitake Koga) .pdf'),
 ('65da1aaa92d34.jpg', 'KB0003', 'Komik', 'si Juki : Strip', 'Faza Meonk', 'Gramedia', '2014-10-12', 164, 'Si Juki adalah komik Webtoon Indonesia pertama yang diterbitkan dalam format cetak karya anak bangsa Faza Ibnu Ubaidillah atau yang akrab disapa Faza Meonk.\r\n\r\nBuku ini merupakan komik yang mengisahkan perjalanan berkarya komikus dan Juki sebagai tokoh utama komiknya dari tahun 2012 hingga 2014. Dalam membuat komik, Faza Meonk sebagai komikus mengambil ide cerita dari isu-isu yang hangat dibicarakan atau bahasa gaulnya ngetrend. Ia tak hanya ingin membuat komik untuk tujuan lucu-lucuan, tapi juga ingin menyampaikan pesan untuk anak muda mengenai isu-isu sosial dengan gaya sarkasme yang ringan tak seberat isu politik.\r\n\r\nJuki, karakter komik yang mengaku anti mainstream dan merasa ngetop, memulai karirnya dari ‘bawah’. Awalnya, dia sekadar tampil sebagai cameo di komik-komik online karya Faza Meonk. Namun, karakternya yang lucu, ngeselin, cuek, dan banyak hoki itu membuat Juki semakin dikenal dan disukai pembacanya.\r\n\r\nDalam komik ini terangkum perjalanan si juki sang aktor komik. Mulai dari digambar asal-asalan dan tidak bernama, kritik kocak dan kritisnya pada sekitar, memenangi penghargaan, sampai nekat mencalonkan diri menjadi presiden.\r\n\r\nYuk, ikuti dan tertawa bersama rekaman perjalanan Juki. Huwala!', 'Si Juki Komik Strip (Faza Meonk) .pdf'),
-('65da1b610a98e.jpg', 'KB0004', 'Dongeng', 'Timun Emas', 'Dede Firmansyah', 'Happy Holy Kidsa', '2014-05-30', 30, 'CERITA TIMUN MAS INI MENGAJARKAN KEPADA ANAK-ANAK TENTANG DUA HAL: PERTAMA, SEKALIPUN TANTANGAN YANG BESAR MENGHADANG, JANGAN PUTUS ASA DAN MENYERAH. KEDUA, KALAU PUNYA KUASA DAN KEKUATAN JANGAN BERLAKU SOMBONG DAN BERTINDAK SEWENANG-WENANG KEPADA MEREKA YANG LEMAH.', 'Timun emas.pdf');
+('65da1b610a98e.jpg', 'KB0004', 'Dongeng', 'Timun Emas', 'Dede Firmansyah', 'Happy Holy Kidsa', '2014-05-30', 30, 'CERITA TIMUN MAS INI MENGAJARKAN KEPADA ANAK-ANAK TENTANG DUA HAL: PERTAMA, SEKALIPUN TANTANGAN YANG BESAR MENGHADANG, JANGAN PUTUS ASA DAN MENYERAH. KEDUA, KALAU PUNYA KUASA DAN KEKUATAN JANGAN BERLAKU SOMBONG DAN BERTINDAK SEWENANG-WENANG KEPADA MEREKA YANG LEMAH.', 'Timun emas.pdf'),
+('65dd6bbd318b1.jpg', 'KB0005', 'Dongeng', 'Kalah oleh si cerdik', 'Atisah', 'Gramedia', '2012-05-06', 136, 'Kamu pernah mendapatkan keberuntungan yang tidak pernah kamu duga? Misalnya, tiba-tiba kamu mendapat hadiah uang yang sangat banyak. Jika pernah, pasti kamu bingung dan terkejut karena tidak siap menerimanya. Si Cerdik Labedu juga mengalami hal yang serupa. Berkat kecerdikannya, dia mendapatkan hadiah yang benar-benar mengejutkan. Memangnya Labedu itu secerdik apa, sih? Terus, hadiah apa yang didapat Labedu? Kamu pasti tidak akan pernah menyangka, sama seperti Labedu\r\n', 'Kalah oleh Si Cerdik.pdf');
 
 -- --------------------------------------------------------
 
@@ -112,22 +112,6 @@ CREATE TABLE `peminjaman` (
   `harga` varchar(255) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `peminjaman`
---
-
-INSERT INTO `peminjaman` (`id`, `id_buku`, `nisn`, `id_user`, `tgl_pinjam`, `tgl_kembali`, `harga`, `status`) VALUES
-(4, 'KB0001', 123, 36, '2024-02-20', '2024-02-18', '', 3),
-(5, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(6, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(7, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(8, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(9, 'KB0001', 123, 36, '2024-02-23', '2024-02-20', '', 3),
-(10, 'KB0001', 123, 36, '2024-02-23', '2024-02-19', '', 3),
-(11, 'KB0001', 123, 36, '2024-02-23', '2024-02-27', '', 2),
-(12, 'KB0001', 123, 36, '2024-02-23', '2024-02-22', '', 3),
-(13, 'KB0001', 123, 45, '2024-02-24', '2024-02-29', 'Rp. 5.000', 1);
 
 -- --------------------------------------------------------
 

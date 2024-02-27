@@ -179,7 +179,7 @@ if (isset($_POST["Manga"])) {
   <div class="header_section">
     <div class="container-fluid">
       <n class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#page"><img src="../images/logof.png"></a>
+        <a class="navbar-brand" href="#page"><img src="../images/p.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

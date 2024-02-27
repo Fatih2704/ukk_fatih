@@ -66,6 +66,14 @@ $connect->close();
   <link rel="icon" type="png" href="images/p.png">
 </head>
 
+<style>
+  body {
+    background-image: url(images/bgAdmin.jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
 <body>
   <div class="content">
     <div class="text">
